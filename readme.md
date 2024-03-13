@@ -19,8 +19,8 @@ To use this search functionality:
 
 ## Preview
 
-![Search Box Preview](search(2).png)
-![Product List Preview](search(1).png)
+![Search Box Preview](Search (2).png)
+![Product List Preview](Search (1).png)
 
 ## Contributing
 
