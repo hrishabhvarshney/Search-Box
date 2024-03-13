@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Box</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            margin-top: 70px;
+            background: #666;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 430px;
+            height: 520px;
+            background: #bbb9b9;
+            border-radius: 15px;
+            box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.06);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            overflow-y: auto;
+        }
+
+        .container form {
+            width: 100%;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 20px;
+
+        }
+
+        .container form input {
+            border: none;
+            outline: none;
+            box-shadow: none;
+            width: 330px;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 10px;
+            border-radius: 20px;
+            background: #f0f0f0;
+            color: #333;
+            margin-right: 10px;
+        }
+
+        .container form button {
+            background: #007bff;
+            /* Added background color */
+            border: none;
+            outline: none;
+            cursor: pointer;
+            font-size: 16px;
+            color: white;
+            /* Changed text color */
+            padding: 10px 10px;
+            /* Added padding */
+            border-radius: 20px;
+            /* Added border radius */
+        }
+
+        .container form button i {
+            margin-right: 5px;
+            /* Added margin-right for icon */
+        }
+
+        .product {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            margin-bottom: 10px;
+            background: #ddd;
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        .product-list {
+            width: 100%;
+            height: 450px;
+            overflow-y: auto;
+        }
+
+        .product img {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .product .p-details {
+            padding-left: 15px;
+        }
+
+        .product .p-details h2 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .product .p-details h3 {
+            font-size: 16px;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="container">
+        <form id="searchForm" type="button">
+            <input type="text" id="search" placeholder="Search Product" onkeyup="searchProducts()">
+            <button type="button" onclick="clearSearch()"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+        <div class="product-list" id="product-list">
+            <div class="product">
+                <img src="https://imgs.search.brave.com/1oj_BoQNwUePXxeo2LOM5Khj1GNiZe0MAjiMBcB8kug/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jZG4x/MS5iaWdjb21tZXJj/ZS5jb20vcy04NjM5/NC9pbWFnZXMvc3Rl/bmNpbC81MDB4NjU5/L3Byb2R1Y3RzLzc0/NjMvMTA4MjY1LzEw/XzYyNDdfd2ViX180/NTIxMi4xNjk5OTEx/Nzc4LmpwZz9jPTI"
+                    alt="Product Image">
+                <div class="p-details">
+                    <h2>Tshirt For Everyone</h2>
+                    <h3>$5</h3>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://imgs.search.brave.com/7sVpmjxygh8_YXJIcJdC0JUrQiwTAU8Zdft9f5xsDbM/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTEz/MjE1NDM3Ny9waG90/by9qZWFucy5qcGc_/cz02MTJ4NjEyJnc9/MCZrPTIwJmM9VDNL/MV9QZGxaeFhJTEtG/dkdrVG1QaUlmNU0y/RWRJeGtxYTc5QUpU/X3cwWT0"
+                    alt="Product Image">
+                <div class="p-details">
+                    <h2>Jeans Classic Fit</h2>
+                    <h3>$30</h3>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://imgs.search.brave.com/XX7yerAo4o0QVvkoe7E-NY5l7MmzB9Wm00nVzqCgQ-4/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvNjIz/MjcwODM2L3Bob3Rv/L21vZGVybi1zcG9y/dC1zaG9lcy5qcGc_/cz02MTJ4NjEyJnc9/MCZrPTIwJmM9RDd4/T2l5VjNUTVFnVXVJ/cWxWdnV0UG80OWd5/TUc5ZjVVODJtY3Z1/RGMwWT0"
+                    alt="Product Image">
+                <div class="p-details">
+                    <h2>Sneakers Ultra Boost</h2>
+                    <h3>$80</h3>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://imgs.search.brave.com/mSFSCSvOXdTEQhDHqccZuYK19Aim2arplCadSZaBnYg/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/ODFLSTYyUUNrNUwu/anBn"
+                    alt="Product Image">
+                <div class="p-details">
+                    <h2>Hoodie Cotton Blend</h2>
+                    <h3>$25</h3>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://imgs.search.brave.com/yHgBzwOE_rM3cvCwF4ioKwH9LY9U-7nmyrM5OGRTGLQ/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pNS53/YWxtYXJ0aW1hZ2Vz/LmNvbS9hc3IvYmRl/NTM3NjctNzEzOS00/N2UwLTgxZjktOTc3/N2EwOWFlZWQ2LjAw/N2I4NGNhMDFiZGRl/ZTU2OTM2OTNlYTli/OGQ4YTllLmpwZWc_/b2RuSGVpZ2h0PTc4/NCZvZG5XaWR0aD01/ODAmb2RuQmc9RkZG/RkZG"
+                    alt="Product Image">
+                <div class="p-details">
+                    <h2>Dress Shirt Slim Fit</h2>
+                    <h3>$40</h3>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://imgs.search.brave.com/79dvzhU10TwxNuliBtsbmKjZjlHj-bGJSajw5Z_ekLY/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/ODFFLVdKeXJnMEwu/anBn"
+                    alt="Product Image">
+                <div class="p-details">
+                    <h2>Leather Wallet</h2>
+                    <h3>$20</h3>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://imgs.search.brave.com/vb7RbnYOLQFmUAPFC_RCwR0Yns1_-S3j66h4tFRjuCI/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE1/MzIzNzczOTQ0MjMt/ZjVlOWNlOGMzNTEx/P3E9ODAmdz0xMDAw/JmF1dG89Zm9ybWF0/JmZpdD1jcm9wJml4/bGliPXJiLTQuMC4z/Jml4aWQ9TTN3eE1q/QTNmREI4TUh4elpX/RnlZMmg4TVRsOGZI/TjFibWRzWVhOemZH/VnVmREI4ZkRCOGZI/d3c.jpeg"
+                    alt="Product Image">
+                <div class="p-details">
+                    <h2>Sunglasses Polarized</h2>
+                    <h3>$15</h3>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://imgs.search.brave.com/NTR-L9B8hul1d_e1xKlFDzNVrwgoYhKFMf9jvNrokMg/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9jZG4u/dGhld2lyZWN1dHRl/ci5jb20vd3AtY29u/dGVudC9tZWRpYS8y/MDIzLzA3L2JhY2tw/YWNrcy0yMDQ4cHgt/OTkzNS0xLmpwZz9h/dXRvPXdlYnAmcXVh/bGl0eT03NSZ3aWR0/aD0xMDI0"
+                    alt="Product Image">
+                <div class="p-details">
+                    <h2>Backpack Waterproof</h2>
+                    <h3>$35</h3>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://imgs.search.brave.com/rGn1kRt365To05WdfSCP_ryY_PwxqVfwq3yTqMOvFmg/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/ODFBMmNDWmx4U1Mu/anBn"
+                    alt="Product Image">
+                <div class="p-details">
+                    <h2>Casual Jacket</h2>
+                    <h3>$50</h3>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://imgs.search.brave.com/-X4UByYsS5JI41MP0Xz4dmi85_RUokd-o2NKH8Mv77c/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9oaXBz/LmhlYXJzdGFwcHMu/Y29tL3ZhZGVyLXBy/b2QuczMuYW1hem9u/YXdzLmNvbS8xNjgz/NTU5MTkzLXN1dW50/by1zcG9ydC13YXRj/aC02NDU5MTMxMDdh/NWJiLmpwZz9jcm9w/PTF4dzoxeGg7Y2Vu/dGVyLHRvcCZyZXNp/emU9OTgwOio"
+                    alt="Product Image">
+                <div class="p-details">
+                    <h2>Sports Watch</h2>
+                    <h3>$60</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        function searchProducts() {
+            const searchText = document.getElementById('search').value.trim().toUpperCase();
+            const products = document.querySelectorAll('.product');
+            let found = false;
+            products.forEach(product => {
+                const productName = product.querySelector('.p-details h2').textContent.toUpperCase();
+                if (productName.includes(searchText) || searchText === '') {
+                    product.style.display = 'flex';
+                    if (!found && searchText !== '') {
+                        product.parentElement.prepend(product);
+                        found = true;
+                    }
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        }
+        function clearSearch() {
+            document.getElementById('search').value = '';
+            window.location.reload();
+        }
+    </script>
+</body>
+
+</html>
