@@ -19,7 +19,7 @@ To use this search functionality:
 
 ## Preview
 
-![Search Box Preview] (Search (2).png)
+![Search Box Preview](search(2).png)
 ![Product List Preview](search(1).png)
 
 ## Contributing
